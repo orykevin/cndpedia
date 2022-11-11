@@ -11,6 +11,7 @@ import BrInfo from './component/brInfo';
 import BrInfo2 from './component/brInfo2';
 import SearchIcon from './component/searchIcon';
 import Credit from './component/credit';
+import AllBreedImage from './component/AllBreedImage';
 function App() {
   const imagenew2 = "https://www.thegreatcat.org/wp-content/uploads/2020/05/Malayan-Cat.jpg"
   const imagenew = "https://burmesecat.org/wp-content/uploads/photo-gallery/index%20slider/Tanzie.jpg"
@@ -202,13 +203,9 @@ function App() {
       (checkWidth() ? newArray2 : newArray).map((i)=>{
         if(i+dataSlice.start < 172){
         return(
-          <div className='card-breeds-cont'  onClick={()=>settingInfo(i+dataSlice.start)}>
-            {anim ? <div className='loading-cont'>
-              <div onAnimationEnd={()=>setAnim(false)} className='loadings'></div>
-              <div className='white-box'></div>
-            </div> : ""}
-          <BrProfile setProf={setProf(i+dataSlice.start)}  />
-          </div>)}
+          <AllBreedImage data={i} dataSlice={dataSlice} settingInfo={settingInfo} setProf={setProf(i+dataSlice.start)} pageAll={pageAll}  />  
+          )
+        }
       }))
     }else{
       console.log("filtered")
@@ -218,13 +215,8 @@ function App() {
         }).map((i)=>{
           console.log(i)
           return(
-            <div className='card-breeds-cont'  onClick={()=>filterInfo(i)}>
-              {anim ? <div className='loading-cont'>
-                <div onAnimationEnd={()=>setAnim(false)} className='loadings'></div>
-                <div className='white-box'></div>
-              </div> : ""}
-            <BrProfile setProf={setProf2(i)}  />
-            </div>)
+            <AllBreedImage data={i} dataSlice={dataSlice} filterInfo={filterInfo} setProf={setProf(i+dataSlice.start)} pageAll={pageAll}  />  
+            )
         })
       )
     }
@@ -234,14 +226,9 @@ function App() {
         (checkWidth() ? newArray2 : newArray).map((i)=>{
         if(i+dataSlice.start < 67){
         return(
-          <div key={i.toString()} className='card-breeds-cont'  onClick={()=>settingInfocat(i+dataSlice.start)}>
-            {anim ? <div className='loading-cont'>
-              <div onAnimationEnd={()=>setAnim(false)} className='loadings'></div>
-              <div className='white-box'></div>
-            </div> : ""}
-          <BrProfile setProf={setProfcat(i+dataSlice.start)}  />
-          </div>)}
-      }))
+          <AllBreedImage data={i} dataSlice={dataSlice} settingInfocat={settingInfocat} setProf={setProfcat(i+dataSlice.start)} pageAll={pageAll}  />)}
+      })
+      )
     }
   
   /*if (data) console.log(data.filter((i)=>{

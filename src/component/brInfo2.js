@@ -14,7 +14,7 @@ function brInfo2({breedInfocat,setShow2}) {
         <h4>Personality Trait</h4>
         <p>{breedInfocat.trait}</p>
         <h4>Averages Life Span</h4>
-        <p>{breedInfocat.life}</p>
+        <p>{breedInfocat.life} years</p>
         <h4>Size</h4>
         <p>Weight : {breedInfocat.weight}</p>
       </div>

@@ -271,7 +271,10 @@
   width: 25px;
   height: 25px;
   z-index: 5;
-  animation: loading-img 1s linear forwards;
+  animation: loading-img 1s linear infinite;
+}
+.loaded-box {
+  animation: loading-img-box 1s linear forwards;
 }
 .white-box {
   width: 63px;
@@ -281,8 +284,8 @@
   position: absolute;
   top: 10px;
   left: 7px;
-  animation: loading-img-box 1s linear forwards;
 }
+
 .search-conts {
   margin: 10px auto;
   width: 90%;
@@ -377,7 +380,7 @@
     transform: rotate(270deg);
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     transform: rotate(360deg);
   }
 }
@@ -438,7 +441,6 @@
     width: 35px;
     height: 35px;
     z-index: 5;
-    animation: loading-img 1s linear forwards;
   }
   .white-box {
     width: 75px;
@@ -448,7 +450,6 @@
     position: absolute;
     top: 10px;
     left: 7px;
-    animation: loading-img-box 1s linear forwards;
   }
   .result-bar {
     width: 96%;
